@@ -1,0 +1,29 @@
+# Build output
+target/
+build/
+*.jar
+*.war
+*.ear
+*.class
+
+# Logs
+*.log
+
+# Environment & IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Custom local overrides / temp files
+HELP.md

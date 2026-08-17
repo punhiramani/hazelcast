@@ -1,0 +1,35 @@
+spring:
+  main.allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://ip/db
+    username: root
+    password: f1s0ft@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    hikari:
+      pool-name: MyHikariPool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 300000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      validation-timeout: 5000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+
+hazelcast:
+  local:
+    dev: false # Set to true for local dev, false for Rancher
+  cluster:
+    name: bankxp-cluster
+  headless:
+    service:
+      dns: hazelcast-headless-service.delivery.svc.cluster.local
