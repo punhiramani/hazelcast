@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# hazalcast
-Implementation of hazalcast on java 17 and spring boot 3
-=======
 # Spring Boot + Hazelcast Embedded Distributed Caching
 
 This repository is a proof-of-concept and reference project demonstrating how to implement **Hazelcast Embedded Distributed Caching** in a Spring Boot application. 
@@ -34,8 +30,9 @@ src/main/java/com/f1soft/hazelcast/
 │   └── BalanceCertificateRequest.java      # Entity model (cached object)
 ├── repository/
 │   └── BalanceCertificateRequestRepository.java # JPA Repository
-└── service/
-    └── BalanceCertificateRequestService.java    # Business logic with cache annotations
+src/main/resources/
+├── application.yaml                        # Application & Hazelcast properties
+└── logback-spring.xml                      # Logback configuration for cache & cluster logs
 ```
 
 ---
@@ -89,6 +86,7 @@ The project includes endpoints to test cache behavior on `BalanceCertificateRequ
 | `GET` | `/api/balance-certificates` | Fetch all records | Direct DB query |
 | `POST` | `/api/balance-certificates` | Create/update certificate request | `@CachePut` (Updates database & cache) |
 | `DELETE` | `/api/balance-certificates/{id}` | Delete certificate request | `@CacheEvict` (Deletes from DB & evicts from cache) |
+| `GET` | `/api/cache-info` | Inspect Hazelcast cluster & cache state | Returns pod IP, cluster members list, and cache size/keys |
 
 ---
 
@@ -184,4 +182,3 @@ docker run -p 8080:8080 -p 5701:5701 hazelcast-app:latest
 ## 📝 License
 
 This project is licensed under the MIT License - feel free to use and adapt for your research and production workloads.
->>>>>>> 0a9fb8b (Initial commit)
