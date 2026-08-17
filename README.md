@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # hazalcast
-Implementation of hazalcast on java 17 and spring boot 3
-=======
+Implementation of hazalcast on java 17 and spring boot 4
+
 # Spring Boot + Hazelcast Embedded Distributed Caching
 
 This repository is a proof-of-concept and reference project demonstrating how to implement **Hazelcast Embedded Distributed Caching** in a Spring Boot application. 
@@ -184,4 +184,3 @@ docker run -p 8080:8080 -p 5701:5701 hazelcast-app:latest
 ## 📝 License
 
 This project is licensed under the MIT License - feel free to use and adapt for your research and production workloads.
->>>>>>> 0a9fb8b (Initial commit)
